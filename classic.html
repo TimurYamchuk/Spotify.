@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/classic.css">
+   <title>My Music Playlist</title>
+</head>
+
+<body>
+
+   <header>
+      <div class="logo">
+         <img src="/img/spotify-logo.png" alt="Spotify Logo">
+         <h1>Spotify</h1>
+      </div>
+
+      <div class="icons">
+         <img src="/img/acc.jpg" alt="User Icon">
+         <img src="/img/bell.jpg" alt="Settings Icon">
+         <img src="/img/home.jpg" alt="Notification Icon">
+      </div>
+   </header>
+   <main>
+      <div class="box_playlist_info"></div>
+
+      <div class="playlist-info">
+         <img class="gif" src="/img/rick.gif" alt="Every Day Playlist GIF">
+         <div class="text1">Classic Playlist</div>
+      </div>
+
+      <hr>
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/queen2.jpg" alt="Song 1">
+            <div class="song-info">
+               <p class="song-title">Queen - Killer Queen</p>
+            </div>
+            <div class="buttons">
+               <button class="button" onclick="playSong('/music/Killer Queen - Killer Queen.mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+
+      </div>
+
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/jackson.jpg" alt="Song 2">
+            <div class="song-info">
+               <p class="song-title">Michael Jackson - Beat It</p>
+            </div>
+            <div class="buttons">
+               <button class="button" onclick="playSong('/music/Michael Jackson - Beat It.mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+      </div>
+
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/dollar.jpg" alt="Song 3">
+            <div class="song-info">
+               <p class="song-title">Aloe Blacc - I Need A Dollar</p>
+            </div>
+            <div class="buttons">
+               <button class="button" onclick="playSong('/music/Aloe Blacc - I Need A Dollar.mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+      </div>
+      <script>
+         var audio = new Audio();
+
+         function playSong(songUrl) {
+            audio.src = songUrl;
+            audio.play();
+
+            audio.addEventListener('timeupdate', function () {
+               var progress = (audio.currentTime / audio.duration) * 100;
+               document.getElementById('song-duration').value = progress;
+            });
+         }
+
+         function pauseSong() {
+            audio.pause();
+         }
+      </script>
+
+
+   </main>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Registration</title>
+    <link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+
+    <form action="main.html">
+        <h2>Spotify Registration</h2>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            title="Enter a valid email address">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required pattern="(?=.*[A-Z]).{8,}"
+            title="Password must be at least 8 characters and contain at least one uppercase letter">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"
+            title="Enter a valid 10-digit phone number">
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="uk">Ukrain</option>
+            <option value="od">Odessa</option>
+            <option value="uk">Kiev</option>
+            <option value="lv">Lvov</option>
+        </select>
+
+        <button type="submit"><a href="main.html">Register</a></button>
+    </form>
+
+</body>
+
+</html>

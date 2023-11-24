@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/rage.css">
+   <title>My Music Playlist</title>
+</head>
+
+<body>
+
+   <header>
+      <div class="logo">
+         <img src="/img/spotify-logo.png" alt="Spotify Logo">
+         <h1>Spotify</h1>
+      </div>
+
+      <div class="icons">
+         <img src="/img/acc.jpg" alt="User Icon">
+         <img src="/img/bell.jpg" alt="Settings Icon">
+         <img src="/img/home.jpg" alt="Notification Icon">
+      </div>
+   </header>
+   <main>
+      <div class="box_playlist_info"></div>
+
+      <div class="playlist-info">
+         <img class="gif" src="/img/trav.gif" alt="Every Day Playlist GIF">
+         <div class="text1">Rage Playlist</div>
+      </div>
+
+      <hr>
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/nardo.jpg" alt="Song 1">
+            <div class="song-info">
+               <p class="song-title">Nardo Wick - Who Want Smoke (feat. G Herbo, Lil Durk, 21 Savage)</p>
+            </div>
+            <div class="buttons">
+               <button class="button"
+                  onclick="playSong('/music/Nardo Wick - Who Want Smoke (feat. G Herbo, Lil Durk, 21 Savage).mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+
+      </div>
+
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/yeat.jpg" alt="Song 2">
+            <div class="song-info">
+               <p class="song-title">Yeat - Talk</p>
+            </div>
+            <div class="buttons">
+               <button class="button" onclick="playSong('/music/Yeat - Talk.mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+      </div>
+
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/wlr.jpg" alt="Song 2">
+            <div class="song-info">
+               <p class="song-title">Playboi Carti - Rockstar Made</p>
+            </div>
+            <div class="buttons">
+               <button class="button" onclick="playSong('/music/Playboi Carti - Rockstar Made.mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+      </div>
+
+      <div class="song-container">
+         <div class="song">
+            <img src="/img/offset.jpg" alt="Song 3">
+            <div class="song-info">
+               <p class="song-title">Offset - SAY MY GRACE (Feat. Travis Scott)</p>
+            </div>
+            <div class="buttons">
+               <button class="button"
+                  onclick="playSong('/music/Offset - SAY MY GRACE (Feat. Travis Scott).mp3')">Play</button>
+               <button class="button" onclick="pauseSong()">Pause</button>
+            </div>
+         </div>
+      </div>
+      <script>
+         var audio = new Audio();
+
+         function playSong(songUrl) {
+            audio.src = songUrl;
+            audio.play();
+
+            audio.addEventListener('timeupdate', function () {
+               var progress = (audio.currentTime / audio.duration) * 100;
+               document.getElementById('song-duration').value = progress;
+            });
+         }
+
+         function pauseSong() {
+            audio.pause();
+         }
+      </script>
+
+   </main>

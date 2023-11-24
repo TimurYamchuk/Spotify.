@@ -1,0 +1,56 @@
+body {
+   font-family: 'Arial', sans-serif;
+   background: linear-gradient(to right, #1ed760, #191515);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   margin: 0;
+}
+
+.pricing-card {
+   width: 100%;
+   height: 150%;
+   transition: width 1s, height 1s;
+   background-color: #282828;
+   margin: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.pricing-card:hover {
+   width: 90%;
+   height: 140%;
+}
+
+.boxx {
+   text-align: center;
+   width: 210px;
+   height: 365px;
+   background-color: #ffffff;
+   border-radius: 10px;
+   transition: transform 0.3s ease-in-out;
+}
+
+.boxx:hover {
+   transform: scale(1.05);
+}
+
+.margine {
+   padding-top: 15px;
+}
+
+.col {
+   margin-top: 20px;
+}
+
+li {
+   text-align: left;
+}
+
+.btmt {
+   margin-top: 23px;
+}
